@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libertinus+Serif:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/styles/styles.css" />
+    <title>Daily Advice</title>
+</head>
+<body>
+    <div class="bg-dark text-secondary px-4 py-5 text-center"> 
+        <div class="py-5"> 
+            <h1 class="display-5 fw-bold text-white">Daily Advice</h1> 
+            <div class="col-lg-6 mx-auto"> 
+                <% if (locals.Advice) { %>
+                <p class="fs-5 mb-4"> <%= Advice  %></p>
+                <% }else if (locals.error) { %>
+                <p class="fs-5 mb-4"> <%= error  %></p> 
+                <% } %>   
+                <form method="post" action="/"> 
+                    <div class="d-grid gap-2 justify-content-sm-center"> 
+                        <button formaction="/" type="submit" class="btn btn-outline-info btn-lg px-4 me-sm-3 fw-bold">Another one!</button> 
+                        <div class="input-group mb-3 mt-3 ">
+                            <input type="text" name="ID" class="form-control bg-dark text-white" placeholder="Seach advice by ID" aria-label="Seach advice by ID">
+                            <button formaction="/search" class="btn btn-outline-info btn-lg fw-bold" type="submit" id="search">Search</button>  
+                        </div>
+                    </div> 
+                </form>    
+                </div> 
+            </div> 
+        </div>
+</body>
+</html>
